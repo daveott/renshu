@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "antd": "^4.4.2",
     "cypress": "^4.10.0",
     "next": "9.4.4",
     "react": "16.13.1",
