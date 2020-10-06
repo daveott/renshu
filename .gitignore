@@ -27,3 +27,5 @@
 /backend/config/master.key
 
 frontend/.next
+
+frontend/yarn-error.log

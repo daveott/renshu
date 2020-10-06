@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("resetDatabase", () => {
+  cy.request('DELETE', 'http://localhost:3000/cypress/cleanup').as('cleanup')
+})
+
+Cypress.Commands.add("factory", (name, attributes) => {
+  cy.request('POST', 'http://localhost:3000/cypress/factories', {
+    name: name,
+     attributes: attributes || {}
+  }).as('test data')
+})

@@ -17,7 +17,7 @@ const DefaultLayout = (props) => {
       </Header>
       <Menu mode="horizontal" className="navigation">
         <Menu.Item key="1">
-          <Link href="/"><a>Mattresses</a></Link>
+          <Link href="/mattress"><a>Mattresses</a></Link>
         </Menu.Item>
         <Menu.Item key="2">
           <Link href="/"><a>Bedding</a></Link>
@@ -32,20 +32,14 @@ const DefaultLayout = (props) => {
           <Link href="/"><a>About</a></Link>
         </Menu.Item>
         <Menu.Item key="6">
-          <Link href="/">
-            <a>
-              { props.isAuthenticated ?
-                <Link href="/signout"><a>Sign Out</a></Link>
-                :
-                <Link href="/signin"><a>Sign In</a></Link>
-              }
-            </a>
-          </Link>
+          { props.isAuthenticated ?
+            <Link href="/signout"><a>Sign Out</a></Link>
+            :
+            <Link href="/signin"><a>Sign In</a></Link>
+          }
         </Menu.Item>
         <Menu.Item key="7">
-          <Link href="/">
-            <a><ShoppingCartOutlined /></a>
-          </Link>
+          <Cartpopover />
         </Menu.Item>
       </Menu>
       <Content style={{ padding: '50px' }}>
