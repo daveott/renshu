@@ -1,14 +1,19 @@
 import Meta from '../components/Meta'
 import Footer from '../components/Footer'
+import CartPopover from '../components/CartPopover'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Layout, Menu, Row, Col } from 'antd';
-import { ShoppingCartOutlined } from '@ant-design/icons';
 
 const { Header, Content } = Layout;
 
+import { useRecoilValue } from 'recoil'
+import { getCartState } from '../components/helpers/recoil-helper'
+
 const DefaultLayout = (props) => {
+  const items = useRecoilValue(getCartState)
+
   return (
     <div>
       <Meta />
@@ -39,7 +44,7 @@ const DefaultLayout = (props) => {
           }
         </Menu.Item>
         <Menu.Item key="7">
-          <Cartpopover />
+          <CartPopover items={items} />
         </Menu.Item>
       </Menu>
       <Content style={{ padding: '50px' }}>

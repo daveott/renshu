@@ -3,13 +3,17 @@ import '../stylesheets/application.scss'
 import DefaultLayout from '../layouts'
 import App from 'next/app'
 
+import { RecoilRoot } from 'recoil'
+
 class MyApp extends App {
     render() {
         const { Component, pageProps } = this.props;
         return (
-            <DefaultLayout>
-                <Component {...pageProps} />
-            </DefaultLayout>
+            <RecoilRoot>
+                <DefaultLayout>
+                    <Component {...pageProps} />
+                </DefaultLayout>
+            </RecoilRoot>
         )
     }
 }
