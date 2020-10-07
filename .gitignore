@@ -29,3 +29,5 @@
 frontend/.next
 
 frontend/yarn-error.log
+
+frontend/tmp
