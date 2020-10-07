@@ -18,6 +18,10 @@ Given(`I should see {string}`, (text) => {
   cy.contains(text)
 })
 
+Given(`I should not see {string}`, (text) => {
+  cy.contains(text).should('not.exist')
+})
+
 Given(`I select {string} from {string}`, (value, label) => {
   cy.get(".ant-select-selector").click()
   cy.contains(value).click()
