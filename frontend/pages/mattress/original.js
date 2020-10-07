@@ -3,8 +3,10 @@ import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { Button, Select, Form } from 'antd'
 const { Option } = Select
+import { cartState } from '../../components/helpers/recoil-helper'
 
 export default function OriginalMattress() {
+  const [cart, setCart] = useRecoilState(cartState)
   const [size, setSize] = useState()
 
   const sizes = [
@@ -15,6 +17,10 @@ export default function OriginalMattress() {
     { value: 'king', label: 'King' },
     { value: 'cal_king', label: 'Cal King' },
   ]
+
+  const handleCartAddition = () => {
+    setCart([{ size: size }])
+  }
 
   function handleChange(value) {
     setSize(value)
@@ -32,7 +38,7 @@ export default function OriginalMattress() {
             }
           </Select>
         </Form.Item>
-        <Button>Add to Cart</Button>
+        <Button onClick={handleCartAddition}>Add to Cart</Button>
       </Form>
     </>
   )

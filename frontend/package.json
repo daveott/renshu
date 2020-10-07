@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
     "antd": "^4.4.2",
     "cypress": "^4.10.0",
     "cypress-cucumber-preprocessor": "^2.5.3",
+    "jest": "^26.5.3",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
