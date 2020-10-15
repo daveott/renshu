@@ -3,4 +3,8 @@ Rails.application.routes.draw do
     require 'test_routes'
     define_test_routes
   end
+
+  scope module: 'api', path: '/api' do
+    resources :products, only: [:index]
+  end
 end
